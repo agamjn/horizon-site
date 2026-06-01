@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Horizon — rest your eyes</title>
 
-  <meta name="description" content="Horizon is a macOS menu-bar app that gently takes over your screen for 20 seconds every 20 minutes, so your eyes can ease off, look into the distance, and refocus." />
+  <meta name="description" content="Horizon is a macOS menu-bar app built on the 20-20-20 rule doctors recommend: every 20 minutes it rests your eyes for 20 seconds, then hands your screen right back." />
   <meta name="theme-color" content="#f5f4f0" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://horizon.agamjn.com/" />
@@ -13,11 +13,11 @@
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Horizon — rest your eyes" />
-  <meta property="og:description" content="A macOS menu-bar app that gently reminds you to rest your eyes — 20 seconds every 20 minutes — then hands your screen right back." />
+  <meta property="og:description" content="A macOS menu-bar app built on the 20-20-20 rule: every 20 minutes it rests your eyes for 20 seconds, then hands your screen right back." />
   <meta property="og:url" content="https://horizon.agamjn.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Horizon — rest your eyes" />
-  <meta name="twitter:description" content="A macOS menu-bar app that gently reminds you to rest your eyes — 20 seconds every 20 minutes." />
+  <meta name="twitter:description" content="A macOS menu-bar app built on the 20-20-20 rule: rest your eyes 20 seconds every 20 minutes." />
 
   <link rel="stylesheet" href="horizon.css" />
 </head>
@@ -38,8 +38,8 @@
     <!-- hero text -->
     <h1 class="headline">Give your eyes a rest from long screen time.</h1>
     <p class="sub">
-      Horizon is a macOS menu-bar app that gently takes over your screen for 20 seconds every
-      20 minutes — so your eyes can ease off, look into the distance, and refocus. Then it hands
+      Horizon is a macOS menu-bar app built on the 20-20-20 rule doctors recommend: every
+      20 minutes it rests your eyes for 20 seconds, so they can ease off and refocus. Then it hands
       your screen right back.
     </p>
 
@@ -53,115 +53,163 @@
         Download for macOS
       </a>
       <span class="cta-note">Free · macOS 12 and later</span>
-      <button type="button" class="help-link" id="helpLink" aria-haspopup="dialog" aria-controls="helpDialog">First time opening it?</button>
+      <button type="button" class="cta-first" id="helpLink" aria-haspopup="dialog" aria-controls="helpDialog">First time opening it?</button>
     </div>
 
-    <!-- live / interactive hint -->
-    <div class="live-hint">
-      <span class="live-dot" aria-hidden="true"></span>
-      Live preview — go ahead, click around
-    </div>
-
-    <!-- device showcase: interactive menu-bar app mock -->
-    <div class="device" aria-label="Horizon menu-bar app — interactive preview">
-      <div class="hz-desktop">
-        <!-- macOS menu bar -->
-        <div class="hz-menubar">
-          <div class="hz-mb-cluster">
-            <span class="hz-mb-item" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="16" height="7" rx="2" stroke="currentColor" stroke-width="1.5" /><rect x="3.6" y="10.6" width="9" height="3.8" rx="1" fill="currentColor" /><path d="M20 11.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
-            </span>
-            <span class="hz-mb-item" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 11.5a10 10 0 0 1 14 0M8 14.6a5.5 5.5 0 0 1 8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /><circle cx="12" cy="17.6" r="1.2" fill="currentColor" /></svg>
-            </span>
-            <span class="hz-mb-item" aria-hidden="true">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.7" /><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
-            </span>
-            <span class="hz-mb-item hz-mb-app sel" aria-hidden="true">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="display:block">
-                <line x1="2.5" y1="16.5" x2="21.5" y2="16.5" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" />
-                <line x1="6.5" y1="20" x2="17.5" y2="20" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" opacity="0.32" />
-                <path d="M5.5 16.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" fill="currentColor" />
-              </svg>
-            </span>
-            <span class="hz-mb-item" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="5" rx="2.5" stroke="currentColor" stroke-width="1.5" /><rect x="4" y="13" width="16" height="5" rx="2.5" stroke="currentColor" stroke-width="1.5" /><circle cx="9" cy="8.5" r="1.4" fill="currentColor" /><circle cx="15" cy="15.5" r="1.4" fill="currentColor" /></svg>
-            </span>
-            <span class="hz-mb-time">9:41</span>
+    <!-- SIDE BY SIDE: the break screen, and the control that drives it -->
+    <section class="duo">
+      <!-- break screen — the larger surface -->
+      <figure class="duo-col break-col">
+        <figcaption class="duo-cap">
+          <span class="duo-kicker">The break screen</span>
+          <span class="duo-desc">This is what your Mac shows: a calm scene and a 20-second countdown.</span>
+        </figcaption>
+        <div class="duo-stage">
+          <!-- hand-built MacBook frame -->
+          <div class="mac">
+            <div class="mac-lid">
+              <div class="mac-bezel">
+                <div class="mac-screen">
+                  <!-- break view -->
+                  <div class="brk">
+                    <div class="brk-scene"></div>
+                    <div class="brk-haze"></div>
+                    <div class="brk-center">
+                      <svg class="brk-eyes" width="86" height="46" viewBox="0 0 86 46" fill="none" aria-hidden="true">
+                        <ellipse cx="26" cy="23" rx="14.2" ry="19" fill="#fff" stroke="#1c1e22" stroke-width="2.2" />
+                        <ellipse cx="60" cy="23" rx="14.2" ry="19" fill="#fff" stroke="#1c1e22" stroke-width="2.2" />
+                        <circle cx="29" cy="16" r="6" fill="#1c1e22" />
+                        <circle cx="63" cy="16" r="6" fill="#1c1e22" />
+                        <circle cx="31" cy="14" r="1.8" fill="#fff" />
+                        <circle cx="65" cy="14" r="1.8" fill="#fff" />
+                      </svg>
+                      <div class="brk-title">Look ~20 feet away</div>
+                      <div class="brk-sub">Rest your eyes. Focus on something in the distance.</div>
+                      <div class="brk-count" id="brkCount">0:20</div>
+                    </div>
+                    <button class="brk-x" aria-label="Skip break" tabindex="-1">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+                    </button>
+                  </div>
+                  <div class="mac-screen-notch"><span class="mac-cam"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="mac-hinge"><span class="mac-notch"></span></div>
           </div>
         </div>
+      </figure>
 
-        <!-- popover (V2 · progress-ring hero) -->
-        <div class="hz-popwrap right">
-          <div class="hz-pop v2">
-            <div class="v2-hero">
-              <div class="hz-ring" style="width:132px;height:132px">
-                <svg width="132" height="132" style="transform:rotate(-90deg)" aria-hidden="true">
-                  <circle cx="66" cy="66" r="62.5" fill="none" stroke="rgba(0,0,0,0.10)" stroke-width="7" />
-                  <circle id="ringArc" cx="66" cy="66" r="62.5" fill="none" stroke="var(--ac)" stroke-width="7"
-                    stroke-linecap="round" stroke-dasharray="392.7" stroke-dashoffset="246.7"
-                    style="transition:stroke-dashoffset 0.9s linear" />
-                </svg>
-                <div class="hz-ring-c">
-                  <div class="v2-time" id="v2Time">12:34</div>
-                  <div class="v2-time-sub" id="v2Sub">min : sec</div>
+      <!-- control panel — lives in the menu bar (frozen snapshot) -->
+      <figure class="duo-col control-col">
+        <figcaption class="duo-cap">
+          <span class="duo-kicker">The control panel</span>
+          <span class="duo-desc">Lives in your menu bar, with a live countdown. Break now, pause, or tune the timing.</span>
+        </figcaption>
+        <div class="duo-stage">
+          <div class="device" aria-label="Horizon menu-bar app">
+            <div class="freeze" aria-hidden="true">
+              <div class="hz-desktop">
+                <!-- macOS menu bar -->
+                <div class="hz-menubar">
+                  <div class="hz-mb-cluster">
+                    <span class="hz-mb-item">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="16" height="7" rx="2" stroke="currentColor" stroke-width="1.5" /><rect x="3.6" y="10.6" width="9" height="3.8" rx="1" fill="currentColor" /><path d="M20 11.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+                    </span>
+                    <span class="hz-mb-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 11.5a10 10 0 0 1 14 0M8 14.6a5.5 5.5 0 0 1 8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /><circle cx="12" cy="17.6" r="1.2" fill="currentColor" /></svg>
+                    </span>
+                    <span class="hz-mb-item">
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.7" /><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+                    </span>
+                    <span class="hz-mb-item hz-mb-app sel">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="display:block">
+                        <line x1="2.5" y1="16.5" x2="21.5" y2="16.5" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" />
+                        <line x1="6.5" y1="20" x2="17.5" y2="20" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" opacity="0.32" />
+                        <path d="M5.5 16.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.545" stroke-linecap="round" fill="currentColor" />
+                      </svg>
+                    </span>
+                    <span class="hz-mb-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="5" rx="2.5" stroke="currentColor" stroke-width="1.5" /><rect x="4" y="13" width="16" height="5" rx="2.5" stroke="currentColor" stroke-width="1.5" /><circle cx="9" cy="8.5" r="1.4" fill="currentColor" /><circle cx="15" cy="15.5" r="1.4" fill="currentColor" /></svg>
+                    </span>
+                    <span class="hz-mb-time">9:41</span>
+                  </div>
+                </div>
+
+                <!-- popover (V2 · progress-ring hero), frozen at 12:34 -->
+                <div class="hz-popwrap right">
+                  <div class="hz-pop v2">
+                    <div class="v2-hero">
+                      <div class="hz-ring" style="width:132px;height:132px">
+                        <svg width="132" height="132" style="transform:rotate(-90deg)">
+                          <circle cx="66" cy="66" r="62.5" fill="none" stroke="rgba(0,0,0,0.10)" stroke-width="7" />
+                          <circle cx="66" cy="66" r="62.5" fill="none" stroke="var(--ac)" stroke-width="7"
+                            stroke-linecap="round" stroke-dasharray="392.7" stroke-dashoffset="246.7" />
+                        </svg>
+                        <div class="hz-ring-c">
+                          <div class="v2-time">12:34</div>
+                          <div class="v2-time-sub">min : sec</div>
+                        </div>
+                      </div>
+                      <div class="v2-cap">until you rest your eyes</div>
+                    </div>
+
+                    <div class="v2-actions">
+                      <button class="hz-btn primary" type="button">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="display:block">
+                          <line x1="2.5" y1="16.5" x2="21.5" y2="16.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                          <line x1="6.5" y1="20" x2="17.5" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.32" />
+                          <path d="M5.5 16.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" />
+                        </svg>
+                        Take a break now
+                      </button>
+                      <button class="hz-btn ghost" type="button">Pause for 1 hour</button>
+                    </div>
+
+                    <div class="v2-settings">
+                      <div class="hz-row static tall">
+                        <span class="hz-row-l">Break every</span>
+                        <div class="hz-step">
+                          <button type="button" aria-label="Less time between breaks">
+                            <svg width="11" height="11" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                          </button>
+                          <span class="v">20 min</span>
+                          <button type="button" aria-label="More time between breaks">
+                            <svg width="11" height="11" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="hz-sep flush"></div>
+                      <div class="hz-row static tall">
+                        <span class="hz-row-l">Break length</span>
+                        <div class="hz-step">
+                          <button type="button" aria-label="Shorter break" disabled>
+                            <svg width="11" height="11" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                          </button>
+                          <span class="v">20 sec</span>
+                          <button type="button" aria-label="Longer break">
+                            <svg width="11" height="11" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="hz-sep flush"></div>
+                      <div class="hz-row static tall">
+                        <span class="hz-row-l">Launch at login</span>
+                        <span class="hz-sw on"><span class="knob"></span></span>
+                      </div>
+                    </div>
+
+                    <div class="v2-foot">
+                      <button class="v2-quit" type="button">Quit Horizon <span class="hz-kbd">⌘Q</span></button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="v2-cap" id="v2Cap">until you rest your eyes</div>
-            </div>
-
-            <div class="v2-actions">
-              <button class="hz-btn primary" id="btnBreak" type="button">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="display:block" aria-hidden="true">
-                  <line x1="2.5" y1="16.5" x2="21.5" y2="16.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-                  <line x1="6.5" y1="20" x2="17.5" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.32" />
-                  <path d="M5.5 16.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" />
-                </svg>
-                Take a break now
-              </button>
-              <button class="hz-btn ghost" id="btnPause" type="button">Pause for 1 hour</button>
-            </div>
-
-            <div class="v2-settings">
-              <div class="hz-row static tall">
-                <span class="hz-row-l">Break every</span>
-                <div class="hz-step" id="stepEvery">
-                  <button type="button" data-dir="-1" aria-label="Less time between breaks">
-                    <svg width="11" height="11" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                  </button>
-                  <span class="v" id="everyVal">20 min</span>
-                  <button type="button" data-dir="1" aria-label="More time between breaks">
-                    <svg width="11" height="11" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                  </button>
-                </div>
-              </div>
-              <div class="hz-sep flush"></div>
-              <div class="hz-row static tall">
-                <span class="hz-row-l">Break length</span>
-                <div class="hz-step" id="stepLen">
-                  <button type="button" data-dir="-1" aria-label="Shorter break">
-                    <svg width="11" height="11" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                  </button>
-                  <span class="v" id="lenVal">20 sec</span>
-                  <button type="button" data-dir="1" aria-label="Longer break">
-                    <svg width="11" height="11" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                  </button>
-                </div>
-              </div>
-              <div class="hz-sep flush"></div>
-              <div class="hz-row static tall">
-                <span class="hz-row-l">Launch at login</span>
-                <button type="button" class="hz-sw on" id="swLaunch" aria-label="Launch at login" aria-pressed="true"><span class="knob"></span></button>
-              </div>
-            </div>
-
-            <div class="v2-foot">
-              <button class="v2-quit" type="button">Quit Horizon <span class="hz-kbd">⌘Q</span></button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </figure>
+    </section>
 
     <footer class="footer">
       Built by ·
@@ -169,7 +217,7 @@
     </footer>
   </main>
 
-  <!-- first-launch help (purely additive; opened from the "First time opening it?" link) -->
+  <!-- first-launch help (opened from the "First time opening it?" link) -->
   <dialog class="help-dialog" id="helpDialog" aria-labelledby="helpTitle">
     <div class="help-card">
       <button type="button" class="help-close" id="helpClose" aria-label="Close">

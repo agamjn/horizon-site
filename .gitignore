@@ -1,0 +1,6 @@
+# Large design-handoff bundles — kept locally, never part of the deployed site
+*.zip
+.image-slots.state.json
+
+# OS cruft
+.DS_Store
