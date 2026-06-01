@@ -46,7 +46,12 @@ app repo are untouched.
 
 ## Notes
 
-- The **"Download now"** button is a placeholder until a macOS build exists; clicking
-  it reveals a subtle "coming soon" note. Swap it for a real download/App Store link
-  (or a waitlist form) when ready in `index.html` + `app.js`.
+- The **"Download now"** button links to the always-latest installer:
+  `https://github.com/agamjn/Horizon/releases/latest/download/Horizon.dmg` — a GitHub
+  permalink that resolves to the newest release's `Horizon.dmg` asset (never hardcode a
+  version). The HTML `download` attribute is intentionally omitted (cross-origin, ignored);
+  GitHub serves it with an attachment header so it downloads directly.
+- A subtle **"First time opening it?"** link under the button opens an accessible
+  `<dialog>` with the macOS first-launch steps for the unsigned (un-notarized) app.
+  Purely additive — built from the site's own type/color tokens.
 - All motion respects `prefers-reduced-motion`.

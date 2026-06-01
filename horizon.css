@@ -64,9 +64,11 @@ button{ font-family:inherit; }
 .cta:active{ transform:translateY(0) scale(0.98); }
 .cta:focus-visible{ outline:2px solid var(--ac); outline-offset:3px; }
 .cta-note{ font-size:13px; color:var(--ink-3); letter-spacing:.01em; }
-.cta-soon{ font-size:13px; color:var(--ac); font-weight:550; letter-spacing:.01em; opacity:0;
-  transform:translateY(-3px); transition:opacity .3s ease, transform .3s ease; }
-.cta-soon.show{ opacity:1; transform:none; }
+.help-link{ font-family:inherit; font-size:13px; color:var(--ink-3); letter-spacing:.01em;
+  background:none; border:0; cursor:pointer; padding:1px 0;
+  border-bottom:1px solid rgba(0,0,0,0.18); transition:color .14s, border-color .14s; }
+.help-link:hover{ color:var(--ac); border-color:var(--ac); }
+.help-link:focus-visible{ outline:2px solid var(--ac); outline-offset:3px; border-radius:2px; }
 
 /* live / interactive hint */
 .live-hint{
@@ -222,4 +224,55 @@ button{ font-family:inherit; }
 }
 @media (prefers-reduced-motion: reduce){
   .live-dot::after{ animation:none; }
+}
+
+/* ---------------------------------------------------------------------------
+   First-launch help dialog — built from the site's own tokens. Purely additive.
+   --------------------------------------------------------------------------- */
+.help-dialog{ border:none; padding:0; background:transparent; color:var(--ink);
+  width:min(92vw, 440px); max-height:86vh; }
+.help-dialog::backdrop{ background:rgba(20,24,28,0.34); backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px); }
+.help-card{ position:relative; text-align:left; background:#faf9f7;
+  border:0.5px solid var(--hair-2); border-radius:16px;
+  box-shadow:0 0 0 0.5px rgba(255,255,255,0.6) inset,
+             0 30px 60px -20px rgba(20,30,38,0.45), 0 8px 20px -10px rgba(20,30,38,0.30);
+  padding:24px 24px 20px; }
+.help-title{ margin:0 6px 6px 0; font-size:18px; font-weight:600; letter-spacing:-0.02em; color:var(--ink); }
+.help-intro{ margin:0 0 16px; font-size:13.5px; line-height:1.55; color:var(--ink-2); max-width:38ch; }
+.help-steps{ margin:0; padding:0; list-style:none; counter-reset:step;
+  display:flex; flex-direction:column; gap:11px; }
+.help-steps li{ position:relative; padding-left:30px; font-size:13.5px; line-height:1.5;
+  color:var(--ink); counter-increment:step; }
+.help-steps li::before{ content:counter(step); position:absolute; left:0; top:-1px;
+  width:20px; height:20px; border-radius:50%; background:var(--ac-soft); color:var(--ac);
+  font-size:11px; font-weight:650; display:flex; align-items:center; justify-content:center;
+  font-variant-numeric:tabular-nums; }
+.help-steps strong, .help-why strong, .help-done strong{ font-weight:600; color:var(--ink); }
+.help-done{ margin:16px 0 0; font-size:13.5px; line-height:1.5; color:var(--ink); }
+.help-why{ margin:14px 0 0; padding-top:14px; border-top:0.5px solid var(--hair);
+  font-size:12.5px; line-height:1.5; color:var(--ink-3); }
+.help-close{ position:absolute; top:12px; right:12px; width:28px; height:28px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center; color:var(--ink-3);
+  background:none; border:0; cursor:pointer; transition:background .12s, color .12s; }
+.help-close:hover{ background:var(--rowhover); color:var(--ink); }
+.help-close:focus-visible{ outline:2px solid var(--ac); outline-offset:2px; }
+.help-term{ margin:16px 0 0; font-size:12.5px; }
+.help-term summary{ cursor:pointer; color:var(--ink-2); font-weight:550; list-style:none;
+  display:inline-flex; align-items:center; gap:5px; width:max-content; }
+.help-term summary::-webkit-details-marker{ display:none; }
+.help-term summary::before{ content:"›"; transition:transform .15s ease; display:inline-block; }
+.help-term[open] summary::before{ transform:rotate(90deg); }
+.help-term summary:hover{ color:var(--ac); }
+.help-term summary:focus-visible{ outline:2px solid var(--ac); outline-offset:3px; border-radius:3px; }
+.help-term-note{ margin:8px 0 0; color:var(--ink-3); font-size:12px; }
+.help-term code{ display:block; margin-top:8px; padding:10px 12px; border-radius:8px;
+  background:rgba(0,0,0,0.05); border:0.5px solid var(--hair);
+  font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; color:var(--ink);
+  white-space:pre-wrap; word-break:break-word; }
+
+@media (prefers-reduced-motion: no-preference){
+  .help-dialog[open]{ animation:help-pop .22s cubic-bezier(0.22,1,0.36,1); }
+  .help-dialog[open]::backdrop{ animation:help-fade .22s ease; }
+  @keyframes help-pop{ from{ opacity:0; transform:translateY(8px) scale(0.98); } to{ opacity:1; transform:none; } }
+  @keyframes help-fade{ from{ opacity:0; } to{ opacity:1; } }
 }

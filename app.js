@@ -33,8 +33,9 @@
     sw: document.getElementById("swLaunch"),
     stepEvery: document.getElementById("stepEvery"),
     stepLen: document.getElementById("stepLen"),
-    cta: document.getElementById("cta"),
-    ctaSoon: document.getElementById("ctaSoon"),
+    helpLink: document.getElementById("helpLink"),
+    helpDialog: document.getElementById("helpDialog"),
+    helpClose: document.getElementById("helpClose"),
   };
 
   function fmt(s) {
@@ -145,13 +146,23 @@
     render();
   });
 
-  // --- CTA: no build yet, so reveal a subtle "coming soon" note ------------
-  if (el.cta && el.ctaSoon) {
-    el.cta.addEventListener("click", function (e) {
-      e.preventDefault();
-      el.ctaSoon.hidden = false;
-      // next frame so the transition runs from the hidden state
-      requestAnimationFrame(function () { el.ctaSoon.classList.add("show"); });
+  // --- first-launch help dialog (additive) ---------------------------------
+  // Uses the native <dialog> for built-in focus trap, Esc-to-close, and focus
+  // return to the trigger. Falls back to a plain open for very old browsers.
+  if (el.helpLink && el.helpDialog) {
+    el.helpLink.addEventListener("click", function () {
+      if (typeof el.helpDialog.showModal === "function") el.helpDialog.showModal();
+      else el.helpDialog.setAttribute("open", "");
+    });
+    if (el.helpClose) {
+      el.helpClose.addEventListener("click", function () { el.helpDialog.close(); });
+    }
+    // Click on the backdrop (outside the card) closes the dialog.
+    el.helpDialog.addEventListener("click", function (e) {
+      var r = el.helpDialog.getBoundingClientRect();
+      var inside = e.clientX >= r.left && e.clientX <= r.right &&
+                   e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) el.helpDialog.close();
     });
   }
 

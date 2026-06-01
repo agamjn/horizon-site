@@ -45,7 +45,7 @@
 
     <!-- CTA -->
     <div class="cta-wrap">
-      <a class="cta" id="cta" href="#download">
+      <a class="cta" href="https://github.com/agamjn/Horizon/releases/latest/download/Horizon.dmg">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="margin-right:1px" aria-hidden="true">
           <path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -53,7 +53,7 @@
         Download now
       </a>
       <span class="cta-note">Free · macOS 12 and later</span>
-      <span class="cta-soon" id="ctaSoon" hidden>Coming soon — building the final release. ✦</span>
+      <button type="button" class="help-link" id="helpLink" aria-haspopup="dialog" aria-controls="helpDialog">First time opening it?</button>
     </div>
 
     <!-- live / interactive hint -->
@@ -168,6 +168,31 @@
       <a href="https://x.com/agam_jn" target="_blank" rel="noopener">@agam_jn</a>
     </footer>
   </main>
+
+  <!-- first-launch help (purely additive; opened from the "First time opening it?" link) -->
+  <dialog class="help-dialog" id="helpDialog" aria-labelledby="helpTitle">
+    <div class="help-card">
+      <button type="button" class="help-close" id="helpClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+      </button>
+      <h2 class="help-title" id="helpTitle">First time opening Horizon</h2>
+      <p class="help-intro">macOS adds one extra step the first time you open an app from outside the App Store. You only do this once.</p>
+      <ol class="help-steps">
+        <li>Open the downloaded <strong>Horizon.dmg</strong>, then drag the Horizon icon onto the <strong>Applications</strong> folder.</li>
+        <li>Open your Applications folder and double-click <strong>Horizon</strong>. macOS will say it “could not verify” the app — click <strong>Done</strong>.</li>
+        <li>Open the Apple menu → <strong>System Settings</strong> → <strong>Privacy &amp; Security</strong>.</li>
+        <li>Scroll down to the <strong>Security</strong> section. You’ll see that “Horizon was blocked” — click <strong>Open Anyway</strong>.</li>
+        <li>Confirm with Touch ID or your password, then click <strong>Open Anyway</strong> once more.</li>
+      </ol>
+      <p class="help-done">That’s it — Horizon now lives in your menu bar (look for the eye icon), and you won’t see this prompt again.</p>
+      <p class="help-why"><strong>Why this happens:</strong> Horizon is free and open-source, and isn’t “notarized” because that requires a paid Apple developer account. The app is safe — macOS shows this for any app distributed outside its paid program.</p>
+      <details class="help-term">
+        <summary>Prefer Terminal?</summary>
+        <p class="help-term-note">Run this to clear the quarantine flag and skip the prompts:</p>
+        <code>xattr -dr com.apple.quarantine /Applications/Horizon.app</code>
+      </details>
+    </div>
+  </dialog>
 
   <script src="app.js"></script>
 </body>
