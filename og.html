@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Source layout for the 1200x630 social preview image (rendered to og-image.png).
+       Reuses horizon.css tokens + the MacBook/break-screen styles so the card matches the site. -->
+  <link rel="stylesheet" href="horizon.css" />
+  <style>
+    html,body{ margin:0; }
+    .og{
+      width:1200px; height:630px; overflow:hidden; position:relative; box-sizing:border-box;
+      display:flex; align-items:center; gap:48px; padding:0 70px;
+      font-family:var(--sans); -webkit-font-smoothing:antialiased;
+      background:
+        radial-gradient(120% 70% at 50% -8%, #e7eeec 0%, rgba(231,238,236,0) 46%),
+        radial-gradient(90% 60% at 88% 6%, #f0e7da 0%, rgba(240,231,218,0) 50%),
+        linear-gradient(180deg, #f5f4f0 0%, #efeee9 60%, #e9e8e2 100%);
+    }
+    .og-left{ flex:0 0 470px; }
+    .og-brand{ display:flex; align-items:center; gap:11px; color:var(--ink); }
+    .og-brand svg{ display:block; }
+    .og-brand .brand-name{ font-size:27px; font-weight:600; letter-spacing:-0.01em; }
+    .og-headline{
+      margin:30px 0 0; font-weight:600; letter-spacing:-0.035em; line-height:1.04;
+      font-size:60px; color:var(--ink); max-width:13ch; text-wrap:balance;
+    }
+    .og-sub{ margin:22px 0 0; font-size:20px; line-height:1.5; color:var(--ink-2); max-width:30ch; }
+    .og-right{ flex:1; display:flex; align-items:center; justify-content:center; }
+    .og-right .mac{ width:510px; }
+
+    /* fixed break-screen sizing for a balanced card (overrides the site's vw clamps) */
+    .og .brk-scene{ animation:none; }
+    .og .brk-eyes{ width:66px; height:auto; margin-bottom:14px; }
+    .og .brk-title{ font-size:29px; }
+    .og .brk-sub{ font-size:13.5px; margin-top:8px; }
+    .og .brk-count{ font-size:54px; margin-top:24px; }
+    .og .brk-x{ display:none; }
+  </style>
+</head>
+<body>
+  <div class="og">
+    <div class="og-left">
+      <div class="og-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="display:block">
+            <line x1="2.5" y1="16.5" x2="21.5" y2="16.5" stroke="currentColor" stroke-width="1.818" stroke-linecap="round" />
+            <line x1="6.5" y1="20" x2="17.5" y2="20" stroke="currentColor" stroke-width="1.818" stroke-linecap="round" opacity="0.32" />
+            <path d="M5.5 16.5a6.5 6.5 0 0 1 13 0" stroke="currentColor" stroke-width="1.818" stroke-linecap="round" fill="none" />
+          </svg>
+        </span>
+        <span class="brand-name">Horizon</span>
+      </div>
+      <h1 class="og-headline">Give your eyes a rest from long screen time.</h1>
+      <p class="og-sub">Automatic 20-20-20 breaks, right from your macOS menu bar.</p>
+    </div>
+
+    <div class="og-right">
+      <div class="mac">
+        <div class="mac-lid">
+          <div class="mac-bezel">
+            <div class="mac-screen">
+              <div class="brk">
+                <div class="brk-scene"></div>
+                <div class="brk-haze"></div>
+                <div class="brk-center">
+                  <svg class="brk-eyes" width="86" height="46" viewBox="0 0 86 46" fill="none" aria-hidden="true">
+                    <ellipse cx="26" cy="23" rx="14.2" ry="19" fill="#fff" stroke="#1c1e22" stroke-width="2.2" />
+                    <ellipse cx="60" cy="23" rx="14.2" ry="19" fill="#fff" stroke="#1c1e22" stroke-width="2.2" />
+                    <circle cx="29" cy="16" r="6" fill="#1c1e22" />
+                    <circle cx="63" cy="16" r="6" fill="#1c1e22" />
+                    <circle cx="31" cy="14" r="1.8" fill="#fff" />
+                    <circle cx="65" cy="14" r="1.8" fill="#fff" />
+                  </svg>
+                  <div class="brk-title">Look ~20 feet away</div>
+                  <div class="brk-sub">Rest your eyes. Focus on something in the distance.</div>
+                  <div class="brk-count">0:20</div>
+                </div>
+              </div>
+              <div class="mac-screen-notch"><span class="mac-cam"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mac-hinge"><span class="mac-notch"></span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
